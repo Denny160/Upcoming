@@ -6,7 +6,6 @@ import {
 const isProtectedRoute = createRouteMatcher([
   '/dashboard(.*)',
   '/forum(.*)',
-  '/api/webhooks/clerk'
 ]);
 
 export default clerkMiddleware((auth, req) => {
@@ -16,3 +15,4 @@ export default clerkMiddleware((auth, req) => {
 export const config = {
   matcher: ['/((?!.*\\..*|_next).*)', '/', '/(api|trpc)(.*)'],
 };
+
