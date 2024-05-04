@@ -62,11 +62,13 @@ const { id, email_addresses, image_url, first_name, last_name, username } = evt.
 const user = {
     clerkId: id,
     email: email_addresses[0].email_address,
-    username: username || null,
-    firstName: first_name || null,
-    lastName: last_name || null,
+    username: username,
+    firstName: first_name,
+    lastName: last_name,
     photo:image_url
 }
+
+console.log(user);
 const newUser = await createUser(user);
 
 if(newUser) {
@@ -85,8 +87,8 @@ return NextResponse.json({message: "Ok", user: newUser})
 
     // Handle null values for first_name and last_name
     const user = {
-        username: username ! ,
-        firstName: first_name ! ,
+        username: username !,
+        firstName: first_name !,
         lastName: last_name !,
         photo: image_url !,
     }
